@@ -10,6 +10,10 @@ const app = express();
 
 // Middleware
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("✅ Backend en ligne !");
+});
+
 app.use(cors());
 
 
