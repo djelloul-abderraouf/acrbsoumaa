@@ -13,7 +13,7 @@ function Dashboard() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/api/players/stats')
+    fetch('https://acrbsoumaa.onrender.com/api/players/stats')
       .then(response => response.json())
       .then(data => {
         setStats(data);

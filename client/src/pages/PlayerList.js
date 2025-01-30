@@ -264,7 +264,7 @@ function PlayerList() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/api/players/list')
+    fetch('https://acrbsoumaa.onrender.com/api/players/list')
       .then(response => response.json())
       .then(data => {
         setPlayers(data);
@@ -310,7 +310,7 @@ function PlayerList() {
   const handleDeletePlayer = async (id) => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer ce joueur ?")) {
       try {
-        await fetch(`http://localhost:5000/api/players/delete/${id}`, {
+        await fetch(`https://acrbsoumaa.onrender.com/api/players/delete/${id}`, {
           method: 'DELETE',
         });
         setPlayers(players.filter(player => player._id !== id));
@@ -324,7 +324,7 @@ function PlayerList() {
 
   const handleSaveChanges = async () => {
     try {
-      await fetch(`http://localhost:5000/api/players/update/${editedPlayer._id}`, {
+      await fetch(`https://acrbsoumaa.onrender.com/api/players/update/${editedPlayer._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editedPlayer)
